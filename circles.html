@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+	<script type="text/javascript" src="./paperjs-v0.11.4/dist/paper-full.min.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+		var maxy=view.size.height;
+		var maxx=view.size.width;
+		var colors1=["PURPLE","RED","GREEN","CYAN","#3972ce","YELLOW","ORANGE","PINK"];
+		<!-- var col="purple"; -->
+		var shap=new Shape.Circle(new Point(Math.random()*maxx,Math.random()*maxy),0);
+		var circles=[];
+		function onKeyDown(event)
+		{
+			if((event.character<='z'&&event.character>='a')||(event.character<='Z'&&event.character>='A'))
+			{
+				shap=new Path.Circle(new Point(Math.random()*maxx,Math.random()*maxy),300);  
+				shap.fillColor=colors1[Math.floor(Math.random()*8)];
+				circles.push(shap);
+			}
+			if(event.key==='a' || event.key==='A')
+			{
+				var sound=new Howl({
+				src: ['./sounds/bubbles.mp3']
+				});
+				sound.play();
+			}
+			else if(event.key==='b' || event.key==='B')
+			{  
+				var sound=new Howl({
+				src: ['./sounds/clay.mp3']
+				});
+				sound.play();
+			}
+			else if(event.key==='c' || event.key==='C')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/confetti.mp3']
+			});sound.play();
+			}
+			else if(event.key==='d' || event.key==='D')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/corona.mp3']
+			});sound.play();
+			}
+			else if(event.key==='e' || event.key==='E')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/dotted-spiral.mp3']
+			});sound.play();
+			}
+			else if(event.key==='f' || event.key==='F')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/flash-1.mp3']
+			});sound.play();
+			}
+			else if(event.key==='g' || event.key==='G')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/flash-2.mp3']
+			});sound.play();
+			}
+			else if(event.key==='h' || event.key==='H')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/flash-3.mp3']
+			});sound.play();
+			}
+			else if(event.key==='i' || event.key==='I')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/glimmer.mp3']
+			});sound.play();
+			}
+			else if(event.key==='j' || event.key==='J')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/moon.mp3']
+			});sound.play();
+			}
+			else if(event.key==='k' || event.key==='K')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/pinwheel.mp3']
+			});sound.play();
+			}
+			else if(event.key==='L' || event.key==='l')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/piston-1.mp3']
+			});sound.play();
+			}
+			else if(event.key==='M' || event.key==='m')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/piston-2.mp3']
+			});sound.play();
+			}
+			else if(event.key==='n' || event.key==='N')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/piston-3.mp3']
+			});sound.play();
+			}
+			else if(event.key==='o' || event.key==='O')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/prism-1.mp3']
+			});sound.play();
+			}
+			else if(event.key==='p' || event.key==='P')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/prism-2.mp3']
+			});sound.play();
+			}
+			else if(event.key==='q' || event.key==='Q')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/prism-3.mp3']
+			});sound.play();
+			}
+			else if(event.key==='r' || event.key==='R')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/spits.mp3']
+			});sound.play();
+			}
+			else if(event.key==='s' || event.key==='S')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/squiggle.mp3']
+			});sound.play();
+			}
+			else if(event.key==='t' || event.key==='T')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/strike.mp3']
+			});sound.play();
+			}
+			else if(event.key==='u' || event.key==='U')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/suspension.mp3']
+			});sound.play();
+			}
+			else if(event.key==='V' || event.key==='v')
+			{  
+				var sound=new Howl({
+			src: ['./sounds/timer.mp3']
+			});sound.play();
+			}
+			else if(event.key==='w' || event.key==='W')
+			{
+				var sound=new Howl({
+			src: ['./sounds/ufo.mp3']
+			});sound.play();
+			}
+			else if(event.key==='x' || event.key==='X')
+			{
+				var sound=new Howl({
+			src: ['./sounds/veil.mp3']
+			});sound.play();
+			}
+			else if(event.key==='y' || event.key==='Y')
+			{
+				var sound=new Howl({
+			src: ['./sounds/wipe.mp3']
+			});sound.play();
+			}
+			else if(event.key==='z' || event.key==='Z')
+			{
+				var sound=new Howl({
+			src: ['./sounds/zig-zag.mp3']
+			});sound.play();
+			}
+		}
+
+		function onFrame(event)
+		{
+			for(var i=0;i<circles.length;i++)
+			{
+				circles[i].fillColor.hue+=1;
+				col=circles[i].fillColor;
+				circles[i].scale(0.96);
+				if(circles[i].area<2)
+				{
+					circles[i].remove();
+					circles.splice(i,1);
+				}
+			}
+		}
+		
+	</script>
+	<style type="text/css">
+		canvas{
+			height: 100%;
+			width: 100%;
+			background-color: black;
+		}
+		html,body{
+			height: 100%;
+			width: 100%;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+	<!-- <script type="text/javascript" src="paptap.js"></script> -->
+</body>
+</html>
