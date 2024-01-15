@@ -13,6 +13,8 @@
 		var circles=[];
 		function onKeyDown(event)
 		{
+			var ele = document.getElementById("infoText");
+			if(ele) ele.remove();
 			if((event.character<='z'&&event.character>='a')||(event.character<='Z'&&event.character>='A'))
 			{
 				shap=new Path.Circle(new Point(Math.random()*maxx,Math.random()*maxy),300);  
@@ -209,6 +211,7 @@
 	</style>
 </head>
 <body>
+	<h1 style="margin: 0px auto" id="infoText"> Press any Key to start </h1>
 	<canvas id="myCanvas"></canvas>
 	<!-- <script type="text/javascript" src="paptap.js"></script> -->
 </body>
